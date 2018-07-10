@@ -1,0 +1,10 @@
+
+<direction>
+<sound tempo="{}"/>
+</direction>
+
+<note>
+<rest/>
+<duration>{}</duration>
+<voice>1</voice>
+</note>

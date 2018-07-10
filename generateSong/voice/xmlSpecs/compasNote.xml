@@ -1,0 +1,16 @@
+
+<direction>
+<sound tempo="{}"/>
+</direction>
+
+<note>
+<pitch>
+<step>{}</step>
+<octave>{}</octave>
+</pitch>
+<duration>{}</duration>
+<voice>1</voice>
+<lyric>
+<text>{}</text>
+</lyric>
+</note>

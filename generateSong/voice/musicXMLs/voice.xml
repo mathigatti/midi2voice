@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE score-partwise PUBLIC "http://www.musicxml.org/dtds/partwise.dtd">
+<score-partwise version="2.0">
+<part-list>
+<score-part id="P1">
+<midi-instrument id="P1-I1">
+<midi-channel>1</midi-channel>
+<midi-program>1</midi-program>
+<volume>80</volume>
+<pan>0</pan>
+</midi-instrument>
+</score-part>
+</part-list>
+<part id="P1">
+<measure number="1">
+<note>
+<rest/>
+<duration>4</duration>
+</note>
+</measure>
+<measure number="2">
+<direction>
+<sound tempo="200"/>
+</direction>
+
+<note>
+<pitch>
+<step>C</step>
+<octave>4</octave>
+</pitch>
+<duration>4</duration>
+<voice>1</voice>
+<lyric>
+<text>hel</text>
+</lyric>
+</note>
+</measure>
+<measure number="3">
+<direction>
+<sound tempo="200"/>
+</direction>
+
+<note>
+<pitch>
+<step>G</step>
+<octave>4</octave>
+</pitch>
+<duration>4</duration>
+<voice>1</voice>
+<lyric>
+<text>lo</text>
+</lyric>
+</note>
+</measure>
+<measure number="4">
+<direction>
+<sound tempo="200"/>
+</direction>
+
+<note>
+<pitch>
+<step>C</step>
+<octave>6</octave>
+</pitch>
+<duration>4</duration>
+<voice>1</voice>
+<lyric>
+<text>world</text>
+</lyric>
+</note>
+</measure>
+<measure number="5">
+<direction>
+<sound tempo="200"/>
+</direction>
+
+<note>
+<pitch>
+<step>C</step>
+<octave>4</octave>
+</pitch>
+<duration>4</duration>
+<voice>1</voice>
+<lyric>
+<text>hel</text>
+</lyric>
+</note>
+</measure>
+<measure number="6">
+<direction>
+<sound tempo="200"/>
+</direction>
+
+<note>
+<pitch>
+<step>G</step>
+<octave>4</octave>
+</pitch>
+<duration>4</duration>
+<voice>1</voice>
+<lyric>
+<text>lo</text>
+</lyric>
+</note>
+</measure>
+<measure number="7">
+<direction>
+<sound tempo="200"/>
+</direction>
+
+<note>
+<pitch>
+<step>E</step>
+<octave>4</octave>
+</pitch>
+<duration>4</duration>
+<voice>1</voice>
+<lyric>
+<text>world</text>
+</lyric>
+</note>
+</measure>
+<measure number="8">
+<direction>
+<sound tempo="200"/>
+</direction>
+
+<note>
+<pitch>
+<step>C</step>
+<octave>4</octave>
+</pitch>
+<duration>4</duration>
+<voice>1</voice>
+<lyric>
+<text>hel</text>
+</lyric>
+</note>
+</measure>
+<measure number="9">
+<direction>
+<sound tempo="200"/>
+</direction>
+
+<note>
+<pitch>
+<step>G</step>
+<octave>4</octave>
+</pitch>
+<duration>4</duration>
+<voice>1</voice>
+<lyric>
+<text>lo</text>
+</lyric>
+</note>
+</measure>
+<measure number="10">
+<direction>
+<sound tempo="200"/>
+</direction>
+
+<note>
+<pitch>
+<step>C</step>
+<octave>6</octave>
+</pitch>
+<duration>4</duration>
+<voice>1</voice>
+<lyric>
+<text>world</text>
+</lyric>
+</note>
+</measure>
+<measure number="11">
+<direction>
+<sound tempo="200"/>
+</direction>
+
+<note>
+<pitch>
+<step>C</step>
+<octave>4</octave>
+</pitch>
+<duration>4</duration>
+<voice>1</voice>
+<lyric>
+<text>hel</text>
+</lyric>
+</note>
+</measure>
+<measure number="12">
+<direction>
+<sound tempo="200"/>
+</direction>
+
+<note>
+<pitch>
+<step>G</step>
+<octave>4</octave>
+</pitch>
+<duration>4</duration>
+<voice>1</voice>
+<lyric>
+<text>lo</text>
+</lyric>
+</note>
+</measure>
+<measure number="13">
+<direction>
+<sound tempo="200"/>
+</direction>
+
+<note>
+<pitch>
+<step>E</step>
+<octave>4</octave>
+</pitch>
+<duration>4</duration>
+<voice>1</voice>
+<lyric>
+<text>world</text>
+</lyric>
+</note>
+</measure>
+<measure number="14">
+<direction>
+<sound tempo="200"/>
+</direction>
+
+<note>
+<pitch>
+<step>C</step>
+<octave>4</octave>
+</pitch>
+<duration>4</duration>
+<voice>1</voice>
+<lyric>
+<text>hel</text>
+</lyric>
+</note>
+</measure>
+<measure number="15">
+<direction>
+<sound tempo="200"/>
+</direction>
+
+<note>
+<pitch>
+<step>G</step>
+<octave>4</octave>
+</pitch>
+<duration>4</duration>
+<voice>1</voice>
+<lyric>
+<text>lo</text>
+</lyric>
+</note>
+</measure>
+<measure number="16">
+<direction>
+<sound tempo="200"/>
+</direction>
+
+<note>
+<pitch>
+<step>C</step>
+<octave>6</octave>
+</pitch>
+<duration>4</duration>
+<voice>1</voice>
+<lyric>
+<text>world</text>
+</lyric>
+</note>
+</measure>
+<measure number="17">
+<direction>
+<sound tempo="200"/>
+</direction>
+
+<note>
+<pitch>
+<step>C</step>
+<octave>4</octave>
+</pitch>
+<duration>4</duration>
+<voice>1</voice>
+<lyric>
+<text>hel</text>
+</lyric>
+</note>
+</measure>
+<measure number="19">
+<note>
+<rest/>
+<duration>4</duration>
+<voice>1</voice>
+</note>
+<barline location="right">
+<bar-style>light-heavy</bar-style>
+</barline>
+</measure>
+</part>
+</score-partwise>

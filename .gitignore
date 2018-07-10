@@ -1,5 +1,5 @@
 **/*.pyc
 **/__pycache__
-compose/midis/*
-compose/voice/*
-generateSong/wavs/*
+compose/midis/*.mid
+compose/voice/*.json
+generateSong/wavs/*.wav

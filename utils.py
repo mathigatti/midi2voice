@@ -10,9 +10,9 @@ LAST_VOICE_COMPOSITION =  VOICE_COMPOSITION_ROOT + "voice_last_composition.json"
 LAST_INSTRUMENTAL_WAV = WAVS_ROOT + "instrumental_last_recording.wav"
 LAST_VOICE_WAV = WAVS_ROOT + "voice_last_recording.wav"
 
-def tag():
-    import time
-    import datetime
+import time
+import datetime
 
+def tag():
     ts = time.time()
     return datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d_%H-%M-%S')

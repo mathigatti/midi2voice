@@ -25,8 +25,8 @@
 
 <note>
 <pitch>
-<step>C</step>
-<octave>4</octave>
+<step>G</step>
+<octave>5</octave>
 </pitch>
 <duration>4</duration>
 <voice>1</voice>
@@ -43,7 +43,7 @@
 <note>
 <pitch>
 <step>G</step>
-<octave>4</octave>
+<octave>5</octave>
 </pitch>
 <duration>4</duration>
 <voice>1</voice>
@@ -59,8 +59,8 @@
 
 <note>
 <pitch>
-<step>C</step>
-<octave>6</octave>
+<step>E</step>
+<octave>4</octave>
 </pitch>
 <duration>4</duration>
 <voice>1</voice>
@@ -93,7 +93,7 @@
 
 <note>
 <pitch>
-<step>G</step>
+<step>E</step>
 <octave>4</octave>
 </pitch>
 <duration>4</duration>
@@ -110,7 +110,7 @@
 
 <note>
 <pitch>
-<step>E</step>
+<step>G</step>
 <octave>4</octave>
 </pitch>
 <duration>4</duration>
@@ -127,8 +127,8 @@
 
 <note>
 <pitch>
-<step>C</step>
-<octave>4</octave>
+<step>G</step>
+<octave>5</octave>
 </pitch>
 <duration>4</duration>
 <voice>1</voice>
@@ -145,7 +145,7 @@
 <note>
 <pitch>
 <step>G</step>
-<octave>4</octave>
+<octave>5</octave>
 </pitch>
 <duration>4</duration>
 <voice>1</voice>
@@ -161,8 +161,8 @@
 
 <note>
 <pitch>
-<step>C</step>
-<octave>6</octave>
+<step>E</step>
+<octave>4</octave>
 </pitch>
 <duration>4</duration>
 <voice>1</voice>
@@ -195,7 +195,7 @@
 
 <note>
 <pitch>
-<step>G</step>
+<step>E</step>
 <octave>4</octave>
 </pitch>
 <duration>4</duration>
@@ -212,7 +212,7 @@
 
 <note>
 <pitch>
-<step>E</step>
+<step>G</step>
 <octave>4</octave>
 </pitch>
 <duration>4</duration>
@@ -229,8 +229,8 @@
 
 <note>
 <pitch>
-<step>C</step>
-<octave>4</octave>
+<step>G</step>
+<octave>5</octave>
 </pitch>
 <duration>4</duration>
 <voice>1</voice>
@@ -247,7 +247,7 @@
 <note>
 <pitch>
 <step>G</step>
-<octave>4</octave>
+<octave>5</octave>
 </pitch>
 <duration>4</duration>
 <voice>1</voice>
@@ -263,8 +263,8 @@
 
 <note>
 <pitch>
-<step>C</step>
-<octave>6</octave>
+<step>E</step>
+<octave>4</octave>
 </pitch>
 <duration>4</duration>
 <voice>1</voice>

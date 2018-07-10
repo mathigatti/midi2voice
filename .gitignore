@@ -3,3 +3,4 @@
 compose/midis/*.mid
 compose/voice/*.json
 generateSong/wavs/*.wav
+sample.mp3

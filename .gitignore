@@ -1,6 +1,3 @@
 **/*.pyc
 **/__pycache__
-compose/midis/*.mid
-compose/voice/*.json
-generateSong/wavs/*.wav
-sample.mp3
+output/*.wav

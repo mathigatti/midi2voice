@@ -3,16 +3,16 @@
 This script relies on the sinsy.jp website from the Nagoya Institute of Technology which implements a HMM-based Singing Voice Synthesis System.
 
 ## Requirements
-	* Extra software
-		- musescore: 
-		- curl
+	+Extra software
+		-musescore: 
+		-curl
 	
-	* python 2.7
-	* python libaries
-		- subprocess
-		- datetime
-		- urllib
-		- hyphenator
+	+python 2.7
+	+python libaries
+		-subprocess
+		-datetime
+		-urllib
+		-hyphenator
 
 
 

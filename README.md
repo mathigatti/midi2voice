@@ -10,12 +10,12 @@ This script relies on the sinsy.jp website from the Nagoya Institute of Technolo
 - python 2.7
 
 ## Usage
-It is used running the main script ./vrender.py, it has three parameters, the lyrics_file, midi_file, sex and tempo.
+It is used running the main script ./vrender.py, it has three parameters, the lyrics_file, midi_file, singer sex and tempo.
 
 Usage example
 
 ```
-python2 vrender.py ./lyrics/somebodyThatIUsedToKnow_lyrics.txt ./midi/somebodyThatIUsedToKnow_voice.mid male 120
+python2 vrender.py ./inputs/somebodyThatIUsedToKnow_lyrics.txt ./inputs/somebodyThatIUsedToKnow_voice.mid male 120
 ```
 
 You can find a sample merged with the instrumental audio [here](https://soundcloud.com/mathias-gatti/somebody-that-i-used-to-know-sinsy-synthetic-voice).

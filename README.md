@@ -14,7 +14,7 @@ This script relies on the sinsy.jp website from the Nagoya Institute of Technolo
 - python 2.7
 
 ## Usage
-It is used running the main script `midi2voice.py`, it has three parameters, the lyrics_file, midi_file, singer sex and tempo.
+It is used running the main script `midi2voice.py`, it has four parameters, the lyrics_file, midi_file, singer sex (optional) and tempo (optional).
 
 Usage example
 

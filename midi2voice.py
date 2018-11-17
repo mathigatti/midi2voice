@@ -12,26 +12,6 @@ VOICE_XML_PROCESSED=FILES_ROOT+"last_voice.xml"
 WAVS_ROOT = "./"
 LAST_VOICE_WAV = WAVS_ROOT + "last_voice_generated.wav"
 
-
-from hyphenator import Hyphenator
-
-def cleanText(text):
-
-	text.replace("\n"," ")
-	text = text.lower()
-
-	symbolsToDelete = ".,'!?" + '"'
-	for symbol in symbolsToDelete:
-		text = text.replace(symbol,"")
-
-	return text
-
-def separarEnSilabas(text):
-	text = cleanText(text)
-	h = Hyphenator("/usr/share/myspell/dicts/hyph_en_US.dic")
-	textSyllables = h.inserted(text)
-	return filter(lambda x: len(x) > 0, textSyllables.replace(" ", "-").split("-"))
-
 def renderizeVoice(lyrics,midiPath,sex, tempo):
 
 	print("Running voice renderization")

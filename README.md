@@ -11,7 +11,7 @@ This script relies on the sinsy.jp website from the Nagoya Institute of Technolo
 
   It's used to make request to sinsy.jp
 
-- python 2.7
+- python 3
 
 ## Usage
 It is used running the main script `midi2voice.py`, it has four parameters, the lyrics_file, midi_file, singer sex (optional) and tempo (optional).
@@ -19,7 +19,7 @@ It is used running the main script `midi2voice.py`, it has four parameters, the 
 Usage example
 
 ```
-python2 midi2voice.py ./inputs/somebodyThatIUsedToKnow_lyrics.txt ./inputs/somebodyThatIUsedToKnow_voice.mid male 120
+python midi2voice.py ./inputs/somebodyThatIUsedToKnow_lyrics.txt ./inputs/somebodyThatIUsedToKnow_voice.mid male 120
 ```
 
 You can find a sample merged with the instrumental audio [here](https://soundcloud.com/mathias-gatti/somebody-that-i-used-to-know-sinsy-synthetic-voice).

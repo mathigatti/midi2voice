@@ -3,15 +3,11 @@
 This script relies on the sinsy.jp website from the Nagoya Institute of Technology which implements a HMM-based Singing Voice Synthesis System.
 
 ## Requirements
-- musescore
+- musescore: It's used to convert midi to musicxml
 
-  It's used to convert midi to musicxml
+- curl: It's used to make request to sinsy.jp
 
-- curl
-
-  It's used to make request to sinsy.jp
-
-- python 3
+- python 3 (Python 2 can also be used with a few modifications, check [this](https://github.com/mathigatti/midi2voice/commit/94bd363bc887fbc8b3206d318a01a2ba77e970d5))
 
 ## Usage
 It is used running the main script `midi2voice.py`, it has four parameters, the lyrics_file, midi_file, singer sex (optional) and tempo (optional).

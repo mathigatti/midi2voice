@@ -1,8 +1,9 @@
 import os
 import sys
-import urllib
+import urllib.request
 
 from voiceSpecificator import generateVoiceSpecification
+from functools import reduce
 
 # Constants
 FILES_ROOT = "./tmp/"
@@ -12,7 +13,7 @@ VOICE_XML_PROCESSED=FILES_ROOT+"last_voice.xml"
 WAVS_ROOT = "./"
 LAST_VOICE_WAV = WAVS_ROOT + "last_voice_generated.wav"
 
-def renderizeVoice(lyrics,midiPath,sex, tempo):
+def renderizeVoice(lyrics,midiPath,sex,tempo):
 
 	print("Running voice renderization")
 
@@ -36,15 +37,14 @@ def download(output,wavPath):
 	index = text.find('./temp/') + len('./temp/')
 	text = text[index:index+40].split(".")[0]
 
-	testfile = urllib.URLopener()
-	testfile.retrieve("http://sinsy.sp.nitech.ac.jp/temp/" + text + ".wav", wavPath)
+	urllib.request.urlretrieve("http://sinsy.sp.nitech.ac.jp/temp/" + text + ".wav", wavPath)
 
 def createMusicXML(midiPath, new_musicxml_path):
     os.system("musescore "+ midiPath +" -o " + new_musicxml_path)
 
 def tokenize(text):
 	textSyllables = cleanText(text)
-	return filter(lambda x: len(x) > 0, textSyllables.replace(" ", "-").split("-"))
+	return list(filter(lambda x: len(x) > 0, textSyllables.replace(" ", "-").split("-")))
 
 def cleanText(text):
 

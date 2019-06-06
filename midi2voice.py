@@ -1,16 +1,16 @@
 import os
 import sys
 import urllib.request
-
 from voiceSpecificator import generateVoiceSpecification
 from functools import reduce
+import requests
 
 # Constants
 FILES_ROOT = "./tmp/"
 VOICE_XML_ORIGINAL=FILES_ROOT + "last_voice.musicxml"
 VOICE_XML_PROCESSED=FILES_ROOT+"last_voice.xml"
 
-WAVS_ROOT = "./"
+WAVS_ROOT = "./output/"
 LAST_VOICE_WAV = WAVS_ROOT + "last_voice_generated.wav"
 
 def renderizeVoice(lyrics,midiPath,sex,tempo):
@@ -24,20 +24,45 @@ def renderizeVoice(lyrics,midiPath,sex,tempo):
 	generateVoiceSpecification(lyrics,tempo,VOICE_XML_ORIGINAL,VOICE_XML_PROCESSED)
 
 	if sex == "male":
-		urlfileName = os.popen("curl -X POST -F 'SPKR_LANG=english' -F 'SPKR=5' -F 'SYNALPHA=0.55' -F 'VIBPOWER=1' -F 'F0SHIFT=0' -F  'SYNSRC=@" + VOICE_XML_PROCESSED +"' http://sinsy.sp.nitech.ac.jp/index.php | grep 'lf0'").read()
+		request(VOICE_XML_PROCESSED, LAST_VOICE_WAV,"male")
 	else:
-		urlfileName = os.popen("curl -X POST -F 'SPKR_LANG=english' -F 'SPKR=4' -F 'SYNALPHA=0.55' -F 'VIBPOWER=1' -F 'F0SHIFT=0' -F  'SYNSRC=@" + VOICE_XML_PROCESSED +"' http://sinsy.sp.nitech.ac.jp/index.php | grep 'lf0'").read()
-
-	download(urlfileName,LAST_VOICE_WAV)
+		request(VOICE_XML_PROCESSED, LAST_VOICE_WAV,"female")
 
 	print("Finished voice renderization")
 
-def download(output,wavPath):
-	text = reduce(lambda accum,x: accum + x, output, "")
-	index = text.find('./temp/') + len('./temp/')
-	text = text[index:index+40].split(".")[0]
+def request(xml_file_path,wavPath,sex="female"):
+	if sex == "male":
+		SPKR = 5
+	else:
+		SPKR = 4
 
-	urllib.request.urlretrieve("http://sinsy.sp.nitech.ac.jp/temp/" + text + ".wav", wavPath)
+	headers = {'User-Agent': 'Mozilla/5.0'}
+	payload = {'SPKR_LANG':'english', 'SPKR':SPKR, 'VIBPOWER':'1', 'F0SHIFT':'0'}
+	files = {'SYNSRC': open(xml_file_path,'rb')}
+
+	# Sending post request and saving response as response object 
+	r = requests.post(url = 'http://sinsy.sp.nitech.ac.jp/index.php',headers=headers,data=payload,files=files)
+	htmlResponse = r.text.split("temp/")
+
+	# Magic scraping of the website to find the name of the wav file generated
+	urlfileName = findWavNameOnWebsite(htmlResponse)
+
+	if urlfileName is None:
+		raise Exception("No wav file found on sinsy.jp")
+	else:
+		download(urlfileName,wavPath)
+
+def findWavNameOnWebsite(htmlResponse):
+	urlfileName = None
+	for line in htmlResponse:
+		parts = line.split(".")
+		if parts[1][:3] == "wav":
+			urlfileName = parts[0]
+			break
+	return urlfileName
+
+def download(urlfileName,wavPath):
+	urllib.request.urlretrieve("http://sinsy.sp.nitech.ac.jp/temp/" + urlfileName + ".wav", wavPath)
 
 def createMusicXML(midiPath, new_musicxml_path):
     os.system("musescore "+ midiPath +" -o " + new_musicxml_path)

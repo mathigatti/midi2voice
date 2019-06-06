@@ -7,9 +7,9 @@ You can find a sample merged with the instrumental audio [here](https://soundclo
 ## Requirements
 - musescore: It's used to convert midi to musicxml
 
-- curl: It's used to make request to sinsy.jp
-
 - python 3 (Python 2 can also be used with a few modifications, check [this](https://github.com/mathigatti/midi2voice/commit/94bd363bc887fbc8b3206d318a01a2ba77e970d5))
+
+- requests library (Try something like `pip install requests`)
 
 ## Usage
 It is used running the main script `midi2voice.py`, it has four parameters, the lyrics_file, midi_file, singer sex (optional) and tempo (optional).
@@ -17,5 +17,5 @@ It is used running the main script `midi2voice.py`, it has four parameters, the 
 Usage example
 
 ```
-python midi2voice.py ./inputs/somebodyThatIUsedToKnow_lyrics.txt ./inputs/somebodyThatIUsedToKnow_voice.mid male 120
+python midi2voice.py ./inputs/somebodyThatIUsedToKnow_lyrics.txt ./inputs/somebodyThatIUsedToKnow_voice.mid female 120
 ```

@@ -7,8 +7,8 @@ import requests
 
 # Constants
 FILES_ROOT = "./tmp/"
-VOICE_XML_ORIGINAL=FILES_ROOT + "last_voice.musicxml"
-VOICE_XML_PROCESSED=FILES_ROOT+"last_voice.xml"
+VOICE_XML_ORIGINAL=FILES_ROOT + "last_voice.xml"
+VOICE_XML_PROCESSED=FILES_ROOT+"last_voice_processed.xml"
 
 WAVS_ROOT = "./output/"
 LAST_VOICE_WAV = WAVS_ROOT + "last_voice_generated.wav"

@@ -65,7 +65,7 @@ def download(urlfileName,wavPath):
 	urllib.request.urlretrieve("http://sinsy.sp.nitech.ac.jp/temp/" + urlfileName + ".wav", wavPath)
 
 def createMusicXML(midiPath, new_musicxml_path):
-    os.system("musescore "+ midiPath +" -o " + new_musicxml_path)
+    os.system("export QT_QPA_PLATFORM=offscreen && musescore "+ midiPath +" -o " + new_musicxml_path)
 
 def tokenize(text):
 	textSyllables = cleanText(text)

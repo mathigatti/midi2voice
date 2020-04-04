@@ -15,7 +15,7 @@ def addVoiceTags(tempo, text, content):
 	i = 0
 	ignoreThisNote = False
 	for line in content:
-		if "<rest/>" in line:
+		if "<rest/>" in line or '<tie type="stop"/>' in line:
 			ignoreThisNote = True
 		if "</note" in line:
 			if not ignoreThisNote:

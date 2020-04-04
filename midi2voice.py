@@ -1,8 +1,12 @@
 import os
 import sys
 import urllib.request
-from voiceSpecificator import generateVoiceSpecification
 from functools import reduce
+from collections import defaultdict
+
+from voiceSpecificator import generateVoiceSpecification
+from lyrics_tokenizer import tokenize
+
 import requests
 
 # Constants
@@ -13,13 +17,11 @@ VOICE_XML_PROCESSED=FILES_ROOT+"last_voice_processed.xml"
 WAVS_ROOT = "./output/"
 LAST_VOICE_WAV = WAVS_ROOT + "last_voice_generated.wav"
 
+
 def renderizeVoice(lyrics,midiPath,sex,tempo):
-
-	print("Running voice renderization")
-
 	createMusicXML(midiPath,VOICE_XML_ORIGINAL)
-
-	lyrics = tokenize(lyrics)
+	lyrics = tokenize(lyrics,midiPath)
+	print(lyrics)
 
 	generateVoiceSpecification(lyrics,tempo,VOICE_XML_ORIGINAL,VOICE_XML_PROCESSED)
 
@@ -28,7 +30,6 @@ def renderizeVoice(lyrics,midiPath,sex,tempo):
 	else:
 		request(VOICE_XML_PROCESSED, LAST_VOICE_WAV,"female")
 
-	print("Finished voice renderization")
 
 def request(xml_file_path,wavPath,sex="female"):
 	if sex == "male":
@@ -67,28 +68,14 @@ def download(urlfileName,wavPath):
 def createMusicXML(midiPath, new_musicxml_path):
     os.system("export QT_QPA_PLATFORM=offscreen && musescore "+ midiPath +" -o " + new_musicxml_path)
 
-def tokenize(text):
-	textSyllables = cleanText(text)
-	return list(filter(lambda x: len(x) > 0, textSyllables.replace(" ", "-").split("-")))
-
-def cleanText(text):
-
-	text.replace("\n"," ")
-	text = text.lower()
-
-	symbolsToDelete = ".,'!?" + '"'
-	for symbol in symbolsToDelete:
-		text = text.replace(symbol,"")
-
-	return text
 
 def main(textFilePath, midiPath, sex, tempo):
-
 	with open(textFilePath, 'r') as text:
-		lyrics = text.read()
+		lyrics = text.readlines()
 
+	print("Running voice renderization")
 	renderizeVoice(lyrics,midiPath,sex, tempo)
-
+	print("Finished voice renderization")
 
 textFilePath = sys.argv[1]
 midiPath = sys.argv[2]

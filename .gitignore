@@ -1,7 +1,6 @@
 **/*.pyc
 **/__pycache__
 
-output/*.wav
-tmp/*.mid
-tmp/*.musicxml
-tmp/*.xml
+*.wav
+*.mid
+*.xml

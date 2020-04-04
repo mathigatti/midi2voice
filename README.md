@@ -17,5 +17,5 @@ It is used running the main script `midi2voice.py`, it has four parameters, the 
 Usage example
 
 ```
-python midi2voice.py ./inputs/shallow.txt ./inputs/shallow.mid female 96
+python3 midi2voice.py ./inputs/shallow.txt ./inputs/shallow.mid female 96
 ```

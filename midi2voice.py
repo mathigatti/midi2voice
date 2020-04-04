@@ -1,42 +1,29 @@
-import os
+
 import sys
 import urllib.request
 from functools import reduce
 
-from voiceSpecificator import generateVoiceSpecification
-from lyrics_tokenizer import tokenize
+from midi2xml import midi2xml
 
 import requests
 from pydub import AudioSegment
 
-# Constants
-FILES_ROOT = "./tmp/"
-VOICE_XML_ORIGINAL=FILES_ROOT + "last_voice.xml"
-VOICE_XML_PROCESSED=FILES_ROOT+"last_voice_processed.xml"
-
-WAVS_ROOT = "./output/"
-LAST_VOICE_WAV = WAVS_ROOT + "last_voice_generated.wav"
-
+VOICE_XML = "voice.xml"
+VOICE_WAV = "voice.wav"
 
 def renderizeVoice(lyrics,midiPath,sex,tempo):
-	createMusicXML(midiPath,VOICE_XML_ORIGINAL)
-	lyrics = tokenize(lyrics,midiPath)
-
-	generateVoiceSpecification(lyrics,tempo,VOICE_XML_ORIGINAL,VOICE_XML_PROCESSED)
-
+	midi2xml(lyrics,midiPath,VOICE_XML,tempo)
+	
 	if sex == "male":
-		request(VOICE_XML_PROCESSED, LAST_VOICE_WAV,"male")
+		request(VOICE_XML, VOICE_WAV,"male")
 	else:
-		request(VOICE_XML_PROCESSED, LAST_VOICE_WAV,"female")
+		request(VOICE_XML, VOICE_WAV,"female")
+	#sinsyFix(VOICE_WAV,tempo)
 
-	#sinsyFix(tempo)
-
-
-def sinsyFix(tempo):
-	song = AudioSegment.from_wav(LAST_VOICE_WAV)
+def sinsyFix(wavPath,tempo):
+	song = AudioSegment.from_wav(wavPath)
 	song = song[int(1000*4*60/tempo):] # Delete extra 4 beats of silence at the beginning of the file
-	song.export(LAST_VOICE_WAV,format="wav")
-
+	song.export(wavPath,format="wav")
 
 def request(xml_file_path,wavPath,sex="female"):
 	if sex == "male":
@@ -72,11 +59,17 @@ def findWavNameOnWebsite(htmlResponse):
 def download(urlfileName,wavPath):
 	urllib.request.urlretrieve("http://sinsy.sp.nitech.ac.jp/temp/" + urlfileName + ".wav", wavPath)
 
-def createMusicXML(midiPath, new_musicxml_path):
-    os.system("export QT_QPA_PLATFORM=offscreen && musescore "+ midiPath +" -o " + new_musicxml_path)
+def main():
+	textFilePath = sys.argv[1]
+	midiPath = sys.argv[2]
+	sex = "female"
+	tempo = 80
 
+	if len(sys.argv) >= 4:	
+		sex = sys.argv[3]
+		if len(sys.argv) >= 5:
+			tempo = int(sys.argv[4])
 
-def main(textFilePath, midiPath, sex, tempo):
 	with open(textFilePath, 'r') as text:
 		lyrics = text.readlines()
 
@@ -84,14 +77,4 @@ def main(textFilePath, midiPath, sex, tempo):
 	renderizeVoice(lyrics,midiPath,sex, tempo)
 	print("Finished voice renderization")
 
-textFilePath = sys.argv[1]
-midiPath = sys.argv[2]
-sex = "female"
-tempo = 80
-
-if len(sys.argv) >= 4:	
-	sex = sys.argv[3]
-	if len(sys.argv) >= 5:
-		tempo = int(sys.argv[4])
-
-main(textFilePath, midiPath, sex, tempo)
+main()

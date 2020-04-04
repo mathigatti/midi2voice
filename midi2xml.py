@@ -1,16 +1,29 @@
 # -*- coding: latin-1 -*-
 
+from lyrics_tokenizer import tokenize
+
 import re
+import os
+
+def midi2xml(lyrics,midiPath,xmlPath,tempo):
+	tempXML = "temp.xml"
+	createMusicXML(midiPath,tempXML)
+	lyrics = tokenize(lyrics,midiPath)
+	generateVoiceSpecification(lyrics,tempo,tempXML,xmlPath)
+	os.remove(tempXML)
+
+def createMusicXML(midiPath, new_musicxml_path):
+    os.system("export QT_QPA_PLATFORM=offscreen && musescore "+ midiPath +" -o " + new_musicxml_path)
 
 def generateVoiceSpecification(lyrics,tempo,inputMusicXMLPath,outputMusicXMLPath):
 	with open(inputMusicXMLPath, 'r') as c:
 		content = [x.strip() for x in c.readlines()]
 		with open(outputMusicXMLPath,'w') as f:
 			f.write(addVoiceTags(tempo,lyrics,content))
+
 def addVoiceTags(tempo, text, content):
 	print("Text:\n" + str(text))
 	output = ""
-	#tempo_xml = '<direction>\n<sound tempo="{}"/>\n</direction>'.format(tempo)
 	lyrics_xml = '<voice>1</voice>\n<lyric>\n<syllabic>{}</syllabic>\n<text>{}</text>\n</lyric>\n'
 
 	i = 0
@@ -40,12 +53,7 @@ def addVoiceTags(tempo, text, content):
 			else:
 				ignoreThisNote = False
 
-
 		output += line
-
-		#if tempo != -1 and "<measure" in line:
-		#	output += tempo_xml
-
 
 	output = re.sub(r"<per-minute>\d+</per-minute>", f"<per-minute>{tempo}</per-minute>",output)
 	output = re.sub(r'<sound tempo="\d+"/>', f'<sound tempo="{tempo}"/>',output)

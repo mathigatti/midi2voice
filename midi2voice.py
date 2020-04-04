@@ -21,14 +21,13 @@ LAST_VOICE_WAV = WAVS_ROOT + "last_voice_generated.wav"
 def renderizeVoice(lyrics,midiPath,sex,tempo):
 	createMusicXML(midiPath,VOICE_XML_ORIGINAL)
 	lyrics = tokenize(lyrics,midiPath)
-	print(lyrics)
 
 	generateVoiceSpecification(lyrics,tempo,VOICE_XML_ORIGINAL,VOICE_XML_PROCESSED)
 
-	#if sex == "male":
-	#	request(VOICE_XML_PROCESSED, LAST_VOICE_WAV,"male")
-	#else:
-	#	request(VOICE_XML_PROCESSED, LAST_VOICE_WAV,"female")
+	if sex == "male":
+		request(VOICE_XML_PROCESSED, LAST_VOICE_WAV,"male")
+	else:
+		request(VOICE_XML_PROCESSED, LAST_VOICE_WAV,"female")
 
 	#sinsyFix(tempo)
 

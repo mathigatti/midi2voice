@@ -70,14 +70,14 @@ def silabas_sentence(sentence):
     return sum([silabas_word(word) for word in sentence.split()],[])
 
 def vocals(text,n):
-	print(text)
 	silabas = silabas_sentence(text)
-	print(silabas)
 
 	if len(silabas) == n:
 	    return silabas
 	elif len(silabas) < n:
 	    index = 0
+	    if all([extendWord(silaba)[1] == None for silaba in silabas]):
+	    	silabas += ["a"]	    	
 	    while(len(silabas) < n):
 	        index = (index + 1) % len(silabas)         
 	        prevPart, extensiblePart = extendWord(silabas[index])

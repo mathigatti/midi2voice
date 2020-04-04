@@ -1,3 +1,4 @@
+from collections import defaultdict
 from music21 import converter, instrument, note, chord
 import pyphen
 dic = pyphen.Pyphen(lang='en')
@@ -7,11 +8,11 @@ def tokenize(text,midiPath):
 	i = 0
 	for n in notesPerVerse(midiPath):
 		verse = cleanText(text[i])
-		new_text += " ".join(vocals(verse,n)) + " "
+		new_text += "|".join(vocals(verse,n)) + "|"
 		i = (i+1)%len(text)
 
 	new_text = new_text.strip()
-	return list(textSyllables.split())
+	return list(new_text.split("|"))
 
 def notesPerVerse(midiFile):
 
@@ -24,7 +25,7 @@ def notesPerVerse(midiFile):
 	for instrument_i in instruments.parts:
 	    notes_to_parse = instrument_i.recurse()
 
-	n = 16
+	n = 8
 
 	notes_to_parse = list(filter(lambda element : isinstance(element, note.Note) or isinstance(element, chord.Chord), notes_to_parse))
 
@@ -37,11 +38,18 @@ def notesPerVerse(midiFile):
 
 	return list(notesPerCompass.values())
 
+continuation = "-"
+
 def extendWord(text):
-	for extensibleEnding in ["a","e","i","o","u","ad","as","at"]:
-		if text.endswith(extensibleEnding):
+	for extensibleEnding in ["a","e","i","o","u","ad","as","at","all"]:
+		if text.endswith(extensibleEnding) or text.endswith(extensibleEnding+continuation):
+			if text.endswith(continuation):
+				additional = continuation
+			else:
+				additional = ""
+
 			if len(extensibleEnding) > 1:
-				return text[:-1], extensibleEnding
+				return text[:-1*len(extensibleEnding) + 1 - len(additional)] + continuation, extensibleEnding + additional
 			else:
 				return text, extensibleEnding
 	return text, None
@@ -56,13 +64,15 @@ def findSmallers(silabas):
     return i
 
 def silabas_word(text):
-    return list(filter(lambda x : len(x) > 0, dic.inserted(text).replace(" ", "").split("-")))
+    return dic.inserted(text).replace("-", continuation + "|").split("|")
 
 def silabas_sentence(sentence):
     return sum([silabas_word(word) for word in sentence.split()],[])
 
 def vocals(text,n):
+	print(text)
 	silabas = silabas_sentence(text)
+	print(silabas)
 
 	if len(silabas) == n:
 	    return silabas

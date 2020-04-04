@@ -2,12 +2,12 @@ import os
 import sys
 import urllib.request
 from functools import reduce
-from collections import defaultdict
 
 from voiceSpecificator import generateVoiceSpecification
 from lyrics_tokenizer import tokenize
 
 import requests
+from pydub import AudioSegment
 
 # Constants
 FILES_ROOT = "./tmp/"
@@ -25,10 +25,18 @@ def renderizeVoice(lyrics,midiPath,sex,tempo):
 
 	generateVoiceSpecification(lyrics,tempo,VOICE_XML_ORIGINAL,VOICE_XML_PROCESSED)
 
-	if sex == "male":
-		request(VOICE_XML_PROCESSED, LAST_VOICE_WAV,"male")
-	else:
-		request(VOICE_XML_PROCESSED, LAST_VOICE_WAV,"female")
+	#if sex == "male":
+	#	request(VOICE_XML_PROCESSED, LAST_VOICE_WAV,"male")
+	#else:
+	#	request(VOICE_XML_PROCESSED, LAST_VOICE_WAV,"female")
+
+	#sinsyFix(tempo)
+
+
+def sinsyFix(tempo):
+	song = AudioSegment.from_wav(LAST_VOICE_WAV)
+	song = song[int(1000*4*60/tempo):] # Delete extra 4 beats of silence at the beginning of the file
+	song.export(LAST_VOICE_WAV,format="wav")
 
 
 def request(xml_file_path,wavPath,sex="female"):

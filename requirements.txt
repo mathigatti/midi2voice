@@ -1,3 +1,4 @@
 requests
 music21
 Pyphen
+pydub

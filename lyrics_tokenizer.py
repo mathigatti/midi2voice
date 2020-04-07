@@ -41,7 +41,7 @@ def notesPerVerse(midiFile):
 continuation = "-"
 
 def extendWord(text):
-	for extensibleEnding in ["a","e","i","o","u","ad","as","at","all"]:
+	for extensibleEnding in ["a","e","i","o","u","oh","ah","ad","as","at","all"]:
 		if text.endswith(extensibleEnding) or text.endswith(extensibleEnding+continuation):
 			if text.endswith(continuation):
 				additional = continuation

@@ -41,7 +41,7 @@ def notesPerVerse(midiFile):
 continuation = "-"
 
 def extendWord(text):
-	for extensibleEnding in ["a","e","i","o","u","oh","ah","ad","as","at","all"]:
+	for extensibleEnding in ["all","oh","ah","ad","as","at","al","a","e","i","o","u"]:
 		if text.endswith(extensibleEnding) or text.endswith(extensibleEnding+continuation):
 			if text.endswith(continuation):
 				additional = continuation
@@ -75,14 +75,14 @@ def vocals(text,n):
 	if len(silabas) == n:
 	    return silabas
 	elif len(silabas) < n:
-	    index = 0
 	    if all([extendWord(silaba)[1] == None for silaba in silabas]):
 	    	silabas += ["a"]	    	
+	    index = len(silabas)-1
 	    while(len(silabas) < n):
-	        index = (index + 1) % len(silabas)         
 	        prevPart, extensiblePart = extendWord(silabas[index])
 	        if extensiblePart:
 	        	silabas = silabas[:index] + [prevPart, extensiblePart] + silabas[index+1:]
+	        index = (index - 1) % len(silabas)         
 	    return silabas
 	else:
 	    while(len(silabas) > n):

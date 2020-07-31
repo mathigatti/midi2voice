@@ -19,3 +19,18 @@ Usage example
 ```
 python3 midi2voice.py ./inputs/shallow.txt ./inputs/shallow.mid female 96
 ```
+
+## Try it on Colab
+
+If you don't have python installed or you just want to check it quickly you can try it online [here](https://colab.research.google.com/drive/1_lZiwQfuHIVaEFmAibPKUMprZ_0yU35L?usp=sharing).
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1_lZiwQfuHIVaEFmAibPKUMprZ_0yU35L?usp=sharing)
+
+
+## Maintainer/Creator
+Mathias Gatti ([@mathigatti](https://mathigatti.com))
+
+Mathias's open-source projects are supported by his Patreon. If you found this project helpful, any monetary contributions to the [Patreon](https://www.patreon.com/mathigatti) are appreciated and will be put to good creative use.
+
+## License
+MIT

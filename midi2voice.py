@@ -59,7 +59,7 @@ def findWavNameOnWebsite(htmlResponse):
 def download(urlfileName,wavPath):
 	urllib.request.urlretrieve("http://sinsy.sp.nitech.ac.jp/temp/" + urlfileName + ".wav", wavPath)
 
-def main():
+if __name__ == "__main__":
 	textFilePath = sys.argv[1]
 	midiPath = sys.argv[2]
 	sex = "female"
@@ -76,5 +76,3 @@ def main():
 	print("Running voice renderization")
 	renderizeVoice(lyrics,midiPath,sex, tempo)
 	print("Finished voice renderization")
-
-main()

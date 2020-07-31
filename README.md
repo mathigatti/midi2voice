@@ -30,7 +30,7 @@ If you don't have python installed or you just want to check it quickly you can 
 ## Maintainer/Creator
 Mathias Gatti ([@mathigatti](https://mathigatti.com))
 
-Mathias's open-source projects are supported by his Patreon. If you found this project helpful, any monetary contributions to the [Patreon](https://www.patreon.com/mathigatti) are appreciated and will be put to good creative use.
+Mathias's open-source projects are supported by [his Patreon](https://www.patreon.com/mathigatti). If you found this project helpful, any monetary contributions to the Patreon are appreciated and will be put to good creative use.
 
 ## License
 MIT

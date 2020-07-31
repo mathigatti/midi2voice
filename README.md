@@ -27,7 +27,9 @@ If you don't have python installed or you just want to check it quickly you can 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1_lZiwQfuHIVaEFmAibPKUMprZ_0yU35L?usp=sharing)
 
 ## Credits
-This source code is developed by Mathias Gatti ([@mathigatti](https://mathigatti.com)) if you use it please remember to cite me. For scientific publications you can use this DOI.
+This source code was developed by Mathias Gatti ([@mathigatti](https://mathigatti.com)) if you use it please remember to cite me. For scientific publications you can use this DOI.
+
+`Gatti, M. (2020). mathigatti/midi2voice v1.0.0 (v1.0.0) [Computer software]. Zenodo. https://doi.org/10.5281/ZENODO.3969003`
 
 [![DOI](https://zenodo.org/badge/140364503.svg)](https://zenodo.org/badge/latestdoi/140364503)
 

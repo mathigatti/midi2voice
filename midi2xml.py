@@ -1,7 +1,7 @@
 # -*- coding: latin-1 -*-
 
 from lyrics_tokenizer import tokenize
-
+from sys import platform
 import re
 import os
 
@@ -13,7 +13,10 @@ def midi2xml(lyrics,midiPath,xmlPath,tempo):
 	os.remove(tempXML)
 
 def createMusicXML(midiPath, new_musicxml_path):
-    os.system("export QT_QPA_PLATFORM=offscreen && musescore "+ midiPath +" -o " + new_musicxml_path)
+	if platform == "darwin":
+		os.system("export QT_QPA_PLATFORM=offscreen && mscore "+ midiPath +" -o " + new_musicxml_path)
+	else:
+		os.system("export QT_QPA_PLATFORM=offscreen && musescore "+ midiPath +" -o " + new_musicxml_path)
 
 def generateVoiceSpecification(lyrics,tempo,inputMusicXMLPath,outputMusicXMLPath):
 	with open(inputMusicXMLPath, 'r') as c:

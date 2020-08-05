@@ -25,7 +25,7 @@ def notesPerVerse(midiFile):
 	for instrument_i in instruments.parts:
 	    notes_to_parse = instrument_i.recurse()
 
-	n = 8
+	notes_per_verse = 8
 
 	notes_to_parse = list(filter(lambda element : isinstance(element, note.Note) or isinstance(element, chord.Chord), notes_to_parse))
 
@@ -34,7 +34,7 @@ def notesPerVerse(midiFile):
 	notesPerCompass = defaultdict(int)
 	for element in notes_to_parse:
 		start = element.offset
-		notesPerCompass[int((start-4*firstBar)/n)] += 1
+		notesPerCompass[int((start-4*firstBar)/notes_per_verse)] += 1
 
 	return list(notesPerCompass.values())
 

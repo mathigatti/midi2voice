@@ -15,8 +15,10 @@ def midi2xml(lyrics,midiPath,xmlPath,tempo):
 def createMusicXML(midiPath, new_musicxml_path):
 	if platform in ["win32","cygwin"]:
 		os.system("MuseScore3.exe "+ midiPath +" -o " + new_musicxml_path)
-	else:
+	elif platform == "darwin":
 		os.system("export QT_QPA_PLATFORM=offscreen && mscore "+ midiPath +" -o " + new_musicxml_path)
+	else:
+		os.system("export QT_QPA_PLATFORM=offscreen && musescore "+ midiPath +" -o " + new_musicxml_path)
 
 def generateVoiceSpecification(lyrics,tempo,inputMusicXMLPath,outputMusicXMLPath):
 	with open(inputMusicXMLPath, 'r') as c:

@@ -11,14 +11,17 @@ You can find a sample merged with the instrumental audio [here](https://soundclo
 
 ## Installation
 
-```
-pip3 install midi2voice
+```bash
+pip install midi2voice
 ```
 
 ## Usage
-It is used running the main script `midi2voice.py`, it has four parameters, the lyrics_file, midi_file, singer sex (optional) and tempo (optional).
 
-Usage example
+You can use it running the installed module using `python -m`. It has five parameters, the lyrics_file, midi_file, singer sex (optional), tempo (optional) and destination folder (optional).
+
+### Usage example
+
+Check the midi and text samples [here](https://github.com/mathigatti/midi2voice/tree/master/inputs).
 
 ```bash
 # Print help

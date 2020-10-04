@@ -1,6 +1,8 @@
 **/*.pyc
 **/__pycache__
-
-*.wav
-*.mid
-*.xml
+**/*.wav
+**/*.mid
+**/*.xml
+build
+dist
+midi2voice.egg-info

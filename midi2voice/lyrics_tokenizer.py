@@ -1,6 +1,8 @@
 from collections import defaultdict
+
 from music21 import converter, instrument, note, chord
 import pyphen
+
 dic = pyphen.Pyphen(lang='en')
 
 def tokenize(text,midiPath):

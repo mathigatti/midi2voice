@@ -5,19 +5,27 @@ This script relies on the [sinsy.jp](http://sinsy.jp/) website from the Nagoya I
 You can find a sample merged with the instrumental audio [here](https://soundcloud.com/mathias-gatti/shallow-midi2voice).
 
 ## Requirements
-- musescore: It's used to convert midi to musicxml
 
+- musescore: It's used to convert midi to musicxml
 - python 3
 
-- python libraries (Try something like: `pip install -r requirements.txt`)
+## Installation
+
+```
+pip3 install midi2voice
+```
 
 ## Usage
 It is used running the main script `midi2voice.py`, it has four parameters, the lyrics_file, midi_file, singer sex (optional) and tempo (optional).
 
 Usage example
 
-```
-python3 midi2voice.py ./inputs/shallow.txt ./inputs/shallow.mid female 96
+```bash
+# Print help
+python3 -m midi2voice -h
+
+# Generate the voice given a midi file and a text file with the lyrics
+python -m midi2voice -l shallow.txt -m shallow.mid -g female -t 96
 ```
 
 ## Try it on Colab

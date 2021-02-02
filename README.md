@@ -46,7 +46,7 @@ This source code was developed by Mathias Gatti ([@mathigatti](https://mathigatt
 
 ## Support my work
 
-Mathias's open-source projects are supported by [his ko-fi](https://ko-fi.com/mathigatti). If you found this project helpful, any monetary contributions to the Patreon are appreciated and will be put to good creative use.
+If you want to help me to keep going developing and maintaining open-source projects you can contribute buying me some [ko-fi](https://ko-fi.com/mathigatti).
 
 ## License
 MIT

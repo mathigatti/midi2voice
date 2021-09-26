@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="midi2voice",
-    version="1.0.1",
+    version="1.0.3",
     author="Mathias Gatti",
     author_email="mathigatti@gmail.com",
     description="Singing synthesis from MIDI file",

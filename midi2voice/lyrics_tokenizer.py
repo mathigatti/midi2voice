@@ -19,13 +19,15 @@ def tokenize(text,midiPath):
 def notesPerVerse(midiFile):
 
 	mid = converter.parse(midiFile)
+	
+	try:
+		instruments = instrument.partitionByInstrument(mid)
+		assert len(instruments.parts) == 1 # MIDI file must contain only vocals
+		for instrument_i in instruments.parts:
+		    notes_to_parse = instrument_i.recurse()
 
-	instruments = instrument.partitionByInstrument(mid)
-
-	assert len(instruments.parts) == 1 # MIDI file must contain only vocals
-
-	for instrument_i in instruments.parts:
-	    notes_to_parse = instrument_i.recurse()
+	except:		
+		notes_to_parse = mid.flat.notes
 
 	notes_per_verse = 8
 

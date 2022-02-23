@@ -14,12 +14,12 @@ def renderize_voice(lyrics, midi_path, sex="female", tempo=80, out_folder="."):
 
 def sinsy_request(xml_file_path, wav_path, sex):
 	if sex == "male":
-		SPKR = 5
+		SPKR = 11
 	else:
-		SPKR = 4
+		SPKR = 10
 
 	headers = {'User-Agent': 'Mozilla/5.0'}
-	payload = {'SPKR_LANG':'english', 'SPKR':SPKR, 'VIBPOWER':'1', 'F0SHIFT':'0'}
+	payload = {'SPKR_LANG':'english', 'SPKR':SPKR, 'VIBPOWER':1, 'F0SHIFT':0, "SYNALPHA": 0.55}
 	files = {'SYNSRC': open(xml_file_path,'rb')}
 
 	# Sending post request and saving response as response object 

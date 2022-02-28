@@ -12,7 +12,7 @@ You can find a sample merged with the instrumental audio [here](https://soundclo
 ## Installation
 
 ```bash
-pip install midi2voice
+pip install git+git://github.com/mathigatti/midi2voice.git
 ```
 
 ## Usage

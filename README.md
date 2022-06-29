@@ -21,10 +21,9 @@ You can use it running the installed module using `python -m midi2voice`. It has
 
 ```
 python -m midi2voice
-  -h, --help            show this help message and exit
-  -l LYRICS, --lyrics LYRICS
-                        Path to txt file containing the lyrics
-  -m MIDI, --midi MIDI  Path to midi file
+  -h, --help # show this help message and exit
+  -l LYRICS, --lyrics LYRICS # Path to txt file containing the lyrics
+  -m MIDI, --midi MIDI # Path to midi file
   -lang {english,japanese,chinese} # Language of the voice (english/japanese/chinese) (OPTIONAL / DEFAULT: english)
   -g {female,male} # Gender voice (female/male) (OPTIONAL / DEFAULT: female)
   -i VOICEINDEX # Each language has different voices, for example japanese has 4 different female voices at the moment, chinese only one. (OPTIONAL / DEFAULT: 0)

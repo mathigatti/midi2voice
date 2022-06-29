@@ -17,7 +17,20 @@ pip install git+git://github.com/mathigatti/midi2voice.git
 
 ## Usage
 
-You can use it running the installed module using `python -m`. It has five parameters, the lyrics_file, midi_file, singer sex (optional), tempo (optional) and destination folder (optional).
+You can use it running the installed module using `python -m midi2voice`. It has serveral parameters, most are optional and you need to use them only if you want to specify something different than the default
+
+```
+python -m midi2voice
+  -h, --help            show this help message and exit
+  -l LYRICS, --lyrics LYRICS
+                        Path to txt file containing the lyrics
+  -m MIDI, --midi MIDI  Path to midi file
+  -lang {english,japanese,chinese} # Language of the voice (english/japanese/chinese) (OPTIONAL / DEFAULT: english)
+  -g {female,male} # Gender voice (female/male) (OPTIONAL / DEFAULT: female)
+  -i VOICEINDEX # Each language has different voices, for example japanese has 4 different female voices at the moment, chinese only one. (OPTIONAL / DEFAULT: 0)
+  -t TEMPO # Song tempo in BPMs (OPTIONAL / DEFAULT 80)
+  -d DESTINATION_FOLDER # Destination folder
+```
 
 ### Usage example
 
@@ -27,9 +40,42 @@ Check the midi and text samples [here](https://github.com/mathigatti/midi2voice/
 # Print help
 python3 -m midi2voice -h
 
+# Basic example
+python -m midi2voice -l shallow.txt -m shallow.mid
+
 # Generate the voice given a midi file and a text file with the lyrics
-python -m midi2voice -l shallow.txt -m shallow.mid -g female -t 96
+python -m midi2voice -l shallow.txt -m shallow.mid -lang english -g female -t 96
 ```
+
+### Voices available
+
+At the moment [sinsy.jp](http://sinsy.jp/) provides this voices. You can use the VOICEINDEX parameter to choose them.
+
+- Japanese
+    - Female
+        0. f00001j_dnn_beta4 : Yoko : Japanese
+        1. f00002j_dnn_beta4 : Xiang-Ling : Japanese
+        2. f01018j_dnn_beta4 : undefined : Japanese
+        3. f00001j : Yoko : Japanese
+        4. f00002j : Xiang-Ling : Japanese
+        5. f00004j_beta : Namine Ritsu S : Japanese
+        6. f00005j : undefined : Japanese
+    - Male
+        0. m01083j_dnn_beta4 : undefined : Japanese
+        1. m01083j : undefined : Japanese
+
+- English
+    - Female
+        0. f00002e_dnn_beta4 : Xiang-Ling : English
+        1. f00002e : Xiang-Ling : English
+    - Male
+        0. m00003e_beta : Matsuo-P : English
+
+- Chinese
+    - Female
+        0. f00002m : Xiang-Ling : Chinese (Mandarin)
+    - Male
+        - None at the moment
 
 ## Try it on Colab
 

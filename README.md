@@ -24,9 +24,9 @@ python -m midi2voice
   -h, --help # show this help message and exit
   -l LYRICS, --lyrics LYRICS # Path to txt file containing the lyrics
   -m MIDI, --midi MIDI # Path to midi file
-  -lang {english,japanese,chinese} # Language of the voice (english/japanese/chinese) (OPTIONAL / DEFAULT: english)
+  -lang {english,japanese,mandarin} # Language of the voice (OPTIONAL / DEFAULT: english)
   -g {female,male} # Gender voice (female/male) (OPTIONAL / DEFAULT: female)
-  -i VOICEINDEX # Each language has different voices, for example japanese has 4 different female voices at the moment, chinese only one. (OPTIONAL / DEFAULT: 0)
+  -i VOICEINDEX # Each language has different voices, for example japanese has 4 different female voices at the moment, mandarin only one. (OPTIONAL / DEFAULT: 0)
   -t TEMPO # Song tempo in BPMs (OPTIONAL / DEFAULT 80)
   -d DESTINATION_FOLDER # Destination folder
 ```
@@ -78,7 +78,7 @@ At the moment [sinsy.jp](http://sinsy.jp/) provides this voices. You can use the
 
         * 0 - m00003e_beta : Matsuo-P : English
 
-- Chinese
+- Mandarin
     - Female
 
         * 0 - f00002m : Xiang-Ling : Chinese (Mandarin)

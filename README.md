@@ -51,29 +51,40 @@ python -m midi2voice -l shallow.txt -m shallow.mid -lang english -g female -t 96
 At the moment [sinsy.jp](http://sinsy.jp/) provides this voices. You can use the VOICEINDEX parameter to choose them.
 
 - Japanese
+
     - Female
-        0. f00001j_dnn_beta4 : Yoko : Japanese
-        1. f00002j_dnn_beta4 : Xiang-Ling : Japanese
-        2. f01018j_dnn_beta4 : undefined : Japanese
-        3. f00001j : Yoko : Japanese
-        4. f00002j : Xiang-Ling : Japanese
-        5. f00004j_beta : Namine Ritsu S : Japanese
-        6. f00005j : undefined : Japanese
+
+        0 - f00001j_dnn_beta4 : Yoko : Japanese
+        1 - f00002j_dnn_beta4 : Xiang-Ling : Japanese
+        2 - f01018j_dnn_beta4 : undefined : Japanese
+        3 - f00001j : Yoko : Japanese
+        4 - f00002j : Xiang-Ling : Japanese
+        5 - f00004j_beta : Namine Ritsu S : Japanese
+        6 - f00005j : undefined : Japanese
+
     - Male
-        0. m01083j_dnn_beta4 : undefined : Japanese
-        1. m01083j : undefined : Japanese
+
+        0 - m01083j_dnn_beta4 : undefined : Japanese
+        1 - m01083j : undefined : Japanese
 
 - English
+
     - Female
-        0. f00002e_dnn_beta4 : Xiang-Ling : English
-        1. f00002e : Xiang-Ling : English
+
+        0 - f00002e_dnn_beta4 : Xiang-Ling : English
+        1 - f00002e : Xiang-Ling : English
+
     - Male
-        0. m00003e_beta : Matsuo-P : English
+
+        0 - m00003e_beta : Matsuo-P : English
 
 - Chinese
     - Female
-        0. f00002m : Xiang-Ling : Chinese (Mandarin)
+
+        0 - f00002m : Xiang-Ling : Chinese (Mandarin)
+
     - Male
+
         - None at the moment
 
 ## Try it on Colab

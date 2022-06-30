@@ -11,26 +11,26 @@ voices_ids = {
 		{"female": [9,10], "male": [11]},
 	"japanese":
 		{"female": [0,1,2,4,5,6,7], "male": [3,8]},
-	"chinese":
+	"mandarin":
 		{"female": [12], "male": []}
 }
 
-def renderize_voice(lyrics, midi_path, gender="female", tempo=80, lang="english", voice_index=0, out_folder="."):
+def renderize_voice(lyrics, midi_path, tempo=80, lang="english", gender="female", voiceindex=0, out_folder="."):
 	VOICE_XML_PATH = os.path.join(out_folder,"voice.xml")
 	VOICE_WAV_PATH = os.path.join(out_folder,"voice.wav")
 
 	midi2xml(lyrics,midi_path,VOICE_XML_PATH,tempo)
-	sinsy_request(VOICE_XML_PATH, VOICE_WAV_PATH, lang, gender, voice_index)
+	sinsy_request(VOICE_XML_PATH, VOICE_WAV_PATH, lang, gender, voiceindex)
 
 
-def voice_index(lang="english", gender="female", index=0):
-	if lang == "chinese" and gender == "male":
-		raise Exception("No male voices available for chinese :(")
+def voice_code(lang="english", gender="female", index=0):
+	if lang == "mandarin" and gender == "male":
+		raise Exception("No male voices available for mandarin :(")
 	options = voices_ids[lang][gender]
 	return options[index]
 
-def sinsy_request(xml_file_path, wav_path, lang="english", gender="female", voice_index=0, vibpower=1, f0shift=0, synalpha=0.55):
-	SPKR = voice_index(lang, gender, voice_index)
+def sinsy_request(xml_file_path, wav_path, lang="english", gender="female", voiceindex=0, vibpower=1, f0shift=0, synalpha=0.55):
+	SPKR = voice_code(lang, gender, voiceindex)
 
 	headers = {'User-Agent': 'Mozilla/5.0'}
 	payload = {'SPKR_LANG': lang, 'SPKR': SPKR, 'VIBPOWER': vibpower, 'F0SHIFT': f0shift, "SYNALPHA": synalpha}

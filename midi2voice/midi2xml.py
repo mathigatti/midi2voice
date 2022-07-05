@@ -6,10 +6,14 @@ import os
 
 from .lyrics_tokenizer import tokenize
 
-def midi2xml(lyrics, midi_path, xml_path, tempo):
+def midi2xml(lyrics, midi_path, xml_path, tempo, lang):
 	temp_xml = "temp.xml"
 	create_music_xml(midi_path, temp_xml)
-	lyrics = tokenize(lyrics, midi_path)
+	if lang in ["mandarin", "japanese"]:
+		lyrics = ''.join(lyrics.split()) # remove white space
+		lyrics = list(lyrics)
+	else:
+		lyrics = tokenize(lyrics, midi_path)
 	generate_voice_specification(lyrics, tempo, temp_xml, xml_path)
 	os.remove(temp_xml)
 

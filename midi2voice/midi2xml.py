@@ -10,7 +10,7 @@ def midi2xml(lyrics, midi_path, xml_path, tempo=80, lang="english"):
 	temp_xml = "temp.xml"
 	create_music_xml(midi_path, temp_xml)
 	if lang in ["mandarin", "japanese"]:
-		lyrics = ''.join(lyrics.split()) # remove white space
+		lyrics = ''.join(unicode(lyrics,'uft-8').split()) # remove white space and convert to unicode
 		lyrics = list(lyrics)
 	else:
 		lyrics = tokenize(lyrics, midi_path)

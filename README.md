@@ -28,6 +28,9 @@ python -m midi2voice
   -g {female,male} # Gender voice (female/male) (OPTIONAL / DEFAULT: female)
   -i VOICEINDEX # Each language has different voices, for example japanese has 4 different female voices at the moment, mandarin only one. (OPTIONAL / DEFAULT: 0)
   -t TEMPO # Song tempo in BPMs (OPTIONAL / DEFAULT 80)
+  -s SYNALPHA # Gender parameter [between -0.8 and 0.8, default: 0.55]
+  -v VIBPOWER # Vibrato intensity [between 0 and 2, default: 1]
+  -p F0SHIFT # Pitch shift [in half tones, between -24 and 24, default: 0]
   -d DESTINATION_FOLDER # Destination folder
 ```
 

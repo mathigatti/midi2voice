@@ -29,5 +29,5 @@ args = vars(ap.parse_args())
 with open(args['lyrics'], 'r') as text:
 	lyrics = text.readlines()
 
-renderize_voice(lyrics, args['midi'], int(args['tempo']), args['language'], args['gender'], args['voiceindex'],
+renderize_voice(lyrics, args['midi'], int(args['tempo']), args['language'], args['gender'], int(args['voiceindex']),
                 args['destination_folder'], float(args['vibpower']), int(args['pitch']), float(args['synalpha']))

@@ -15,12 +15,12 @@ voices_ids = {
 		{"female": [12], "male": []}
 }
 
-def renderize_voice(lyrics, midi_path, tempo=80, lang="english", gender="female", voiceindex=0, out_folder="."):
+def renderize_voice(lyrics, midi_path, tempo=80, lang="english", gender="female", voiceindex=0, out_folder=".", vibpower=1, f0shift=0, synalpha=0.55):
 	VOICE_XML_PATH = os.path.join(out_folder,"voice.xml")
 	VOICE_WAV_PATH = os.path.join(out_folder,"voice.wav")
 
 	midi2xml(lyrics,midi_path,VOICE_XML_PATH,tempo, lang)
-	sinsy_request(VOICE_XML_PATH, VOICE_WAV_PATH, lang, gender, voiceindex)
+	sinsy_request(VOICE_XML_PATH, VOICE_WAV_PATH, lang, gender, voiceindex, vibpower, f0shift, synalpha)
 
 
 def voice_code(lang="english", gender="female", index=0):

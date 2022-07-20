@@ -11,7 +11,7 @@ setuptools.setup(
     description="Singing synthesis from MIDI file",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/mathigatti/midi2voice",
+    url="https://github.com/glicerico/midi2voice",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
